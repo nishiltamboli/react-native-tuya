@@ -8,6 +8,12 @@ export function registerAccountWithEmail(
   return tuya.registerAccountWithEmail(params);
 }
 
+export function registerAccountWithUid(
+  params: RegisterAccountWithUidParams
+): Promise<any> {
+  return tuya.registerAccountWithUid(params);
+}
+
 export function getRegisterEmailValidateCode(
   params: GetEmailValidateCodeParams
 ): Promise<any> {
@@ -16,6 +22,10 @@ export function getRegisterEmailValidateCode(
 
 export function loginWithEmail(params: LoginWithEmailParams): Promise<any> {
   return tuya.loginWithEmail(params);
+}
+
+export function loginWithUid(params: LoginWithUidParams): Promise<any> {
+  return tuya.loginWithUid(params);
 }
 
 export function getEmailValidateCode(
@@ -57,6 +67,12 @@ export type User = {
   phoneCode: string;
 };
 
+export type RegisterAccountWithUidParams = {
+  countryCode: string;
+  uid: string;
+  password: string;
+};
+
 export type RegisterAccountWithEmailParams = {
   countryCode: string;
   email: string;
@@ -71,6 +87,12 @@ export type GetEmailValidateCodeParams = {
 
 export type LoginWithEmailParams = {
   email: string;
+  password: string;
+  countryCode: string;
+};
+
+export type LoginWithUidParams = {
+  uid: string;
   password: string;
   countryCode: string;
 };
