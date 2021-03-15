@@ -59,6 +59,15 @@ export function updateHome(params: UpdateHomeParams): Promise<string> {
   return tuya.updateHome(params);
 }
 
+export type AddRoomParams = {
+  homeId: number;
+  name: string;
+};
+
+export function addRoom(params: AddRoomParams): Promise<string> {
+  return tuya.addRoom(params);
+}
+
 export type DismissHomeParams = {
   homeId: number;
 };
